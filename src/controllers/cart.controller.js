@@ -1,5 +1,5 @@
 
-import cartManager from './../data/cart.manager.js';
+import cartManager from '../data/fs/managers/cart.manager.js';
 
 export async function getCart (req, res, next) {
     try {

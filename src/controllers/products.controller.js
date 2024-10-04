@@ -1,4 +1,4 @@
-import productsManager from './../data/products.manager.js';
+import productsManager from '../data/fs/managers/products.manager.js';
 
 export async function getAllProducts (req, res, next) {
     try {

@@ -10,6 +10,6 @@ productsRouter.post("/", createGet)
 productsRouter.put("/:pid", updateProduct)
 productsRouter.delete("/:pid", destroyProduct)
 
-// ver si hay que poner el middlewares
+
 
 export default productsRouter
