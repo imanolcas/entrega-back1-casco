@@ -1,0 +1,20 @@
+{{#user}}
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">{{this.email}}</p>
+                <p class="card-text">{{this.title}}</p>
+                <p class="card-text">{{this.role}}</p>
+            </div>
+        </div>    
+        <button onclick="cerrarSesion()">
+            Cerrar sesion
+        </button>
+{{/user}}
+
+
+<script>
+    function cerrarSesion (){
+        window.localStorage.setItem("status", false)
+    }
+</script>

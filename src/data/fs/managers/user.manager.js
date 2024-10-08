@@ -45,6 +45,19 @@ class UsersManager {
             throw error
         }
     }
+    async verify (email, password){
+        try {
+            const all = await this.readAll()
+            const one = all.find(product => product.email === email)
+            if(one.password === password){
+                return true
+            }
+            return false
+        } catch (error) {
+            console.error(error)
+            throw error
+        }
+    }
 
     async create(data) {
         try {

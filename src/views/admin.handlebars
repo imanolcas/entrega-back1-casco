@@ -1,0 +1,95 @@
+
+<ul class="d-flex row m-1 gap-2">
+    {{#each products}}
+        <div class="card" id="{{this.id}}" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text">{{this.title}}</p>
+                <p class="card-text">{{this.description}}</p>
+                <p class="card-text">${{this.price}}</p>
+                <p class="card-text">Stock: {{this.stock}}</p>
+                <p class="card-text">{{this.code}}</p>
+                <p class="card-text">{{this.category}}</p>
+            </div>
+            <form action="delete/{{this.id}}" method="post">
+                <button type="submit" class="btn btn-primary m-2" >Delete</button>
+            </form>
+            <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{this.id}}">
+            Edit
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop-{{this.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit product</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="edit/{{this.id}} "method="post">
+                            <label for="title" class="form-label">Name of product</label>
+                            <input type="text" name="title" id="title" class="form-control" value="{{this.title}}">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" style="height: 100px" value="{{this.description}}"></textarea>
+                            <label for="price" class="form-label">Price of product</label>
+                            <input type="number" name="price" id="price" class="form-control" value="{{this.price}}">
+                            <label for="stock" class="form-label">Stock of product</label>
+                            <input type="number" name="stock" id="stock" class="form-control" value="{{this.stock}}">
+                            <label for="code" class="form-label">Code of product</label>
+                            <input type="text" name="code" id="code" class="form-control" value="{{this.code}}">
+                            <label for="category" class="form-label">Category of product</label>
+                            <input type="text" name="category" id="category" class="form-control" value="{{this.category}}">
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Edit</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    {{/each}}
+    <div class="card d-flex justify-content-center align-items-center" style="width: 18rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-plus-square-dotted" viewBox="0 0 16 16">
+            <path d="M2.5 0q-.25 0-.487.048l.194.98A1.5 1.5 0 0 1 2.5 1h.458V0zm2.292 0h-.917v1h.917zm1.833 0h-.917v1h.917zm1.833 0h-.916v1h.916zm1.834 0h-.917v1h.917zm1.833 0h-.917v1h.917zM13.5 0h-.458v1h.458q.151 0 .293.029l.194-.981A2.5 2.5 0 0 0 13.5 0m2.079 1.11a2.5 2.5 0 0 0-.69-.689l-.556.831q.248.167.415.415l.83-.556zM1.11.421a2.5 2.5 0 0 0-.689.69l.831.556c.11-.164.251-.305.415-.415zM16 2.5q0-.25-.048-.487l-.98.194q.027.141.028.293v.458h1zM.048 2.013A2.5 2.5 0 0 0 0 2.5v.458h1V2.5q0-.151.029-.293zM0 3.875v.917h1v-.917zm16 .917v-.917h-1v.917zM0 5.708v.917h1v-.917zm16 .917v-.917h-1v.917zM0 7.542v.916h1v-.916zm15 .916h1v-.916h-1zM0 9.375v.917h1v-.917zm16 .917v-.917h-1v.917zm-16 .916v.917h1v-.917zm16 .917v-.917h-1v.917zm-16 .917v.458q0 .25.048.487l.98-.194A1.5 1.5 0 0 1 1 13.5v-.458zm16 .458v-.458h-1v.458q0 .151-.029.293l.981.194Q16 13.75 16 13.5M.421 14.89c.183.272.417.506.69.689l.556-.831a1.5 1.5 0 0 1-.415-.415zm14.469.689c.272-.183.506-.417.689-.69l-.831-.556c-.11.164-.251.305-.415.415l.556.83zm-12.877.373Q2.25 16 2.5 16h.458v-1H2.5q-.151 0-.293-.029zM13.5 16q.25 0 .487-.048l-.194-.98A1.5 1.5 0 0 1 13.5 15h-.458v1zm-9.625 0h.917v-1h-.917zm1.833 0h.917v-1h-.917zm1.834-1v1h.916v-1zm1.833 1h.917v-1h-.917zm1.833 0h.917v-1h-.917zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+        </svg>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Create
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Create new product</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="create" method="post">
+                        <label for="title" class="form-label">Name of product</label>
+                        <input type="text" name="title" id="title" class="form-control" required>
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" style="height: 100px"></textarea>
+                        <label for="price" class="form-label">Price of product</label>
+                        <input type="number" name="price" id="price" class="form-control" >
+                        <label for="stock" class="form-label">Stock of product</label>
+                        <input type="number" name="stock" id="stock" class="form-control" >
+                        <label for="code" class="form-label">Code of product</label>
+                        <input type="text" name="code" id="code" class="form-control" >
+                        <label for="category" class="form-label">Category of product</label>
+                        <input type="text" name="category" id="category" class="form-control" >
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</ul>

@@ -1,0 +1,17 @@
+<div class="card d-flex position-absolute top-50 start-50 translate-middle">
+  <div class="card-body ">
+    <h3>Login</h3>
+    <form class="d-flex flex-column m-4 gap-2" action="login" method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit" class="btn btn-primary">Enter</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  window.localStorage.setItem("status", true)
+</script>
+        

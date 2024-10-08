@@ -87,7 +87,6 @@ export async function updateProduct(req, res, next) {
 export async function destroyProduct(req, res, next) {
     try {
         const { pid } = req.params
-        console.log("pid: ", pid)
         const response = await productsManager.delete(pid)
         if (!response) {
             const error = new Error(`Product with id ${pid} not found`);
@@ -95,6 +94,114 @@ export async function destroyProduct(req, res, next) {
             throw error;
         }
         return res.status(200).json({message: "Product delete", response: response})
+    } catch (error) {
+        return next(error);
+    }
+}
+
+export async function showAllProducts (req, res, next) {
+    try {
+        let { category } = req.query
+
+        let products
+
+        if(!category){
+            products = await productsManager.readAll()
+        }else{
+            products = await productsManager.readAll(category)
+        }
+        if(products.length > 0){
+            return res.render("index", {products: products})
+        }else{
+            const error = new Error("Not found products")
+            error.statusCode = 404
+            throw error
+        }
+    } catch (error) {
+        return next(error);
+    }
+} 
+
+export async function adminProducts (req, res, next) {
+    try {
+        let { category } = req.query
+
+        let products
+
+        if(!category){
+            products = await productsManager.readAll()
+        }else{
+            products = await productsManager.readAll(category)
+        }
+        if(products.length > 0){
+            return res.render("admin", {products: products})
+        }else{
+            const error = new Error("Not found products")
+            error.statusCode = 404
+            throw error
+        }
+    } catch (error) {
+        return next(error);
+    }
+} 
+
+export async function createProduct (req, res, next){
+    try {
+        const { title, description, code, price, status, stock } = req.body
+        let { category, thumbnails } = req.query
+        if(!category){
+            category = "none"
+        }
+        if(!thumbnails){
+            thumbnails = []
+        }
+
+
+        const response = await productsManager.create({
+            title,
+            description,
+            code,
+            price,
+            status,
+            stock,
+            category,
+            thumbnails
+        })
+
+        return res.redirect("/products/admin")
+    } catch (error) {
+        return next(error);
+    }
+}
+
+
+export async function editProduct(req, res, next) {
+    try {
+        const { pid } = req.params
+        const newData = req.body
+        console.log(pid)
+        const response = await productsManager.update(pid, newData)
+        if (!response) {
+            const error = new Error(`Product with id ${pid} not found`);
+            error.statusCode = 404;
+            throw error;
+        }
+        return res.redirect("/products/admin")
+    } catch (error) {
+        return next(error);
+    }
+}
+
+export async function deleteProduct(req, res, next) {
+    try {
+        const { pid } = req.params
+        const response = await productsManager.delete(pid)
+        if (!response) {
+            const error = new Error(`Product with id ${pid} not found`);
+            error.statusCode = 404;
+            throw error;
+        }
+        return res.redirect("/products/admin")
     } catch (error) {
         return next(error);
     }

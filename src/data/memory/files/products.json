@@ -11,17 +11,6 @@
     "id": "1221912cfb4b93cd7948bbc5"
   },
   {
-    "title": "Producto 2",
-    "description": "Descripción del producto 2",
-    "code": "P002",
-    "price": 200,
-    "status": true,
-    "stock": 20,
-    "category": "none",
-    "thumbnails": [],
-    "id": "30b0cd1e1838a5d05858a7cd"
-  },
-  {
     "title": "Producto 5",
     "description": "Descripción del producto 5",
     "code": "P005",
@@ -463,56 +452,14 @@
     ]
   },
   {
-    "id": "c5e7f9b2d3a8b4f6a9c7d1e5",
-    "title": "Productono oasdoaskd",
-    "description": "Descripción del producto 3",
-    "code": "P003",
-    "price": 100,
-    "status": false,
-    "stock": 50,
-    "category": "Categoria L",
-    "thumbnails": [
-      "img1.png",
-      "img2.png"
-    ]
-  },
-  {
     "id": "e7b4f9d6a1c8e3b7d2f9a5b1",
-    "title": "Producto 38",
+    "title": "Producto 3",
     "description": "Descripción del producto 38",
     "code": "P038",
-    "price": 140,
+    "price": "140",
     "status": true,
-    "stock": 25,
+    "stock": "25",
     "category": "Categoria B",
-    "thumbnails": [
-      "img1.png",
-      "img2.png"
-    ]
-  },
-  {
-    "id": "d3e8f1b7c2a9d4f5b6e7f9a2",
-    "title": "Producto 39",
-    "description": "Descripción del producto 39",
-    "code": "P039",
-    "price": 155,
-    "status": true,
-    "stock": 45,
-    "category": "Categoria C",
-    "thumbnails": [
-      "img1.png",
-      "img2.png"
-    ]
-  },
-  {
-    "id": "f9b3c6d7e1a2b4f8a5c7e9d1",
-    "title": "Producto 40",
-    "description": "Descripción del producto 40",
-    "code": "P040",
-    "price": 150,
-    "status": true,
-    "stock": 20,
-    "category": "Categoria A",
     "thumbnails": [
       "img1.png",
       "img2.png"

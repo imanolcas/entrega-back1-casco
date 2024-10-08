@@ -10,6 +10,5 @@ usersRouter.post("/", createUser)
 usersRouter.put("/:uid", updateUser)
 usersRouter.delete("/:uid", destroyUser)
 
-// ver si hay que poner el middlewares
 
 export default usersRouter

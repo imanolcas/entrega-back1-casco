@@ -60,7 +60,7 @@ export async function createUser (req, res, next){
             role
         })
 
-        console.log(req)
+        
         return res.status(201).json({message: "User created", response})
     } catch (error) {
         return next(error);
@@ -94,6 +94,69 @@ export async function destroyUser(req, res, next) {
             throw error;
         }
         return res.status(200).json({message: "User delete", response: response})
+    } catch (error) {
+        return next(error);
+    }
+}
+
+
+export async function showUser(req, res, next) {
+        try {
+            const { uid } = req.params
+            const response = await usersManager.read(uid)
+            if(response){
+                res.render("user", {user: response})
+            }else{
+                const error = new Error("Not found user")
+                error.statusCode(404)
+                throw error
+            }
+        } catch (error) {
+            return next(error);
+        }
+}
+
+
+export async function registerUser (req, res, next){
+    try {
+        let { email, password, title } = req.body
+        let { photo, role } = req.query
+        if(!role){
+            role = "none"
+        }
+        if(!photo){
+            photo = []
+        }
+
+        email = email.toLowerCase()
+
+
+        await usersManager.create({
+            photo,
+            title,
+            email,
+            password,
+            role
+        })
+
+        return res.redirect('/');
+    } catch (error) {
+        return next(error);
+    }
+}
+
+
+
+export async function loginUser (req, res, next){
+    try {
+        let {email, password} = req.body
+        const response = await usersManager.verify(email, password)
+        if(response){
+            return res.redirect("/")
+        }
+
+        return 
+
     } catch (error) {
         return next(error);
     }
