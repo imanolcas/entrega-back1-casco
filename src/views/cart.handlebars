@@ -1,0 +1,33 @@
+<div class="col-sm-6 col-lg-10">
+    <ul class="d-flex row gap-0.5">
+        {{#each cart.products}}
+            <div class="card m-2" style="width: 18rem;">
+                <img src="{{this.thumbnail}}" class="card-img-top" alt="{{this.title}}">
+                <div class="card-body">
+                    <p class="card-text">{{this.title}}</p>
+                    <h5>Description</h5>
+                    <p class="card-text">{{this.description}}</p>
+                    <h5>Price</h5>
+                    <p class="card-text">${{this.price}}</p>
+                    <h5>Stock</h5>
+                    <p class="card-text">{{this.stock}}</p>
+                    <h5>Status</h5>
+                    <p class="card-text">{{this.status}}</p>
+                    <h5>Category</h5>
+                    <p class="card-text">{{this.category}}</p>
+                </div>
+            </div>
+        {{/each}}
+    </ul>
+</div> 
+<div>
+    <form action="/delete/{{this.cart.id}}" method="post">
+        <button type="submit">Delete cart</button>
+    </form>
+</div>
+{{!-- 
+<form action="delete/{{this.id}}" method="post">
+        <button type="submit" class="btn btn-primary m-2" >Delete</button>
+    </form> --}}
+
+

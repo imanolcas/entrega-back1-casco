@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { getCart, postAddProduct, postCreate } from "../../controllers/cart.controller.js";
+import { getCart, postAddProduct, postCreate, readAll } from "../../controllers/cart.controller.js";
 
 
 const cartsRouter = Router()
 
 cartsRouter.post("/", postCreate)
-cartsRouter.get("/:cid", getCart)
+cartsRouter.get("/:uid", getCart)
 cartsRouter.post("/:cid/product/:pid", postAddProduct)
+cartsRouter.get("/", readAll)
 
 
-// ver si hay que poner el middlewares
 
 export default cartsRouter

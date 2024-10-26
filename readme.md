@@ -3,7 +3,7 @@
 Este es un e-commerce como entrega para CoderHouse
 
 
-
+Con implementacion de mongoDB y mongoose
 
 
 
@@ -41,6 +41,27 @@ Este es un e-commerce como entrega para CoderHouse
 ```http
   http://localhost:8080/users/:uid
 ```
+
+#### Para poder ver la informacion de un carrito como vista donde se puede eliminar el mismo
+
+User_id de ejemplo
+671bf25e63ef9bc9f2c19392
+
+```http
+  http://localhost:8080/cart/:uid
+``` 
+
+#### Para poder ver todos los carritos
+
+```http
+  localhost:8008/api/carts
+``` 
+
+####En postman para poder crear un carrito
+
+```http
+  localhost:8008/api/carts/
+``` 
 
 
 ## Authors

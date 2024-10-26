@@ -1,17 +1,36 @@
-<ul class="d-flex row gap-0.5">
-    {{#each products}}
-        <div class="card m-2" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">{{this.title}}</p>
-                <p class="card-text">{{this.description}}</p>
-                <p class="card-text">{{this.price}}</p>
-                <p class="card-text">{{this.stock}}</p>
-                <p class="card-text">{{this.status}}</p>
-                <p class="card-text">{{this.category}}</p>
+<h1>Products</h1>
+<main class="row">
+   <section class="col-6 col-lg-2">
+        <div class="position-fixed d-flex flex-column justify-content-center ">
+            <h2>Filters</h2>
+            <a href="/">Remove filters</a>
+            <h3>Category</h3>
+            <div class="d-flex flex-column">
+                <a class="" href=":?category=none">None</a>
+                <a href=":?category=CategoriaA">Category A</a>
+                <a href=":?category=CategoriaB">Category B</a>
+                <a href=":?category=CategoriaC">Category C</a>
             </div>
+            
         </div>
-    {{/each}}
-</ul>
+    </section>
+    <div class="col-sm-6 col-lg-10">
+        <ul class="d-flex row gap-0.5">
+            {{#each products}}
+                <div class="card m-2" style="width: 18rem;">
+                    <img src="{{this.thumbnail}}" class="card-img-top" alt="{{this.title}}">
+                    <div class="card-body">
+                        <p class="card-text">{{this.title}}</p>
+                        <p class="card-text">${{this.price}}</p>
+                        <p class="card-text">{{this.category}}</p>
+                        <a href="/products/detail/{{this._id}}">Go detail</a>
+                    </div>
+                </div>
+            {{/each}}
+        </ul>
+    </div> 
+</main>
+
+
 
 

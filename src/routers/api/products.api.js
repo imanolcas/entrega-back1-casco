@@ -4,7 +4,7 @@ import { getProduct, getAllProducts, destroyProduct, updateProduct, createGet,  
 
 const productsRouter = Router()
 
-productsRouter.get("/", getAllProducts)
+productsRouter.get("/:category?", getAllProducts)
 productsRouter.get("/:pid", getProduct)
 productsRouter.post("/", createGet)
 productsRouter.put("/:pid", updateProduct)

@@ -89,7 +89,6 @@ class ProductsManager {
             const stringAll = JSON.stringify(filteredProducts, null, 2);
             await fs.promises.writeFile(this.path, stringAll);
             return `Product with id: ${id} delete`
-
         } catch (error) {
             console.error(error)
             throw error

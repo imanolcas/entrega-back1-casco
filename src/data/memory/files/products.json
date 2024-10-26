@@ -95,7 +95,7 @@
     "price": 145,
     "status": true,
     "stock": 25,
-    "category": "Categoria B",
+    "category": "CategoriaB",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -109,7 +109,7 @@
     "price": 135,
     "status": true,
     "stock": 35,
-    "category": "Categoria C",
+    "category": "CategoriaC",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -123,7 +123,7 @@
     "price": 220,
     "status": true,
     "stock": 20,
-    "category": "Categoria A",
+    "category": "CategoriaA",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -137,7 +137,7 @@
     "price": 160,
     "status": true,
     "stock": 50,
-    "category": "Categoria B",
+    "category": "CategoriaB",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -151,7 +151,7 @@
     "price": 115,
     "status": true,
     "stock": 40,
-    "category": "Categoria C",
+    "category": "CategoriaC",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -165,7 +165,7 @@
     "price": 190,
     "status": true,
     "stock": 30,
-    "category": "Categoria A",
+    "category": "CategoriaA",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -179,7 +179,7 @@
     "price": 180,
     "status": true,
     "stock": 20,
-    "category": "Categoria B",
+    "category": "CategoriaB",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -193,7 +193,7 @@
     "price": 175,
     "status": true,
     "stock": 25,
-    "category": "Categoria C",
+    "category": "CategoriaC",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -207,7 +207,7 @@
     "price": 130,
     "status": true,
     "stock": 45,
-    "category": "Categoria A",
+    "category": "CategoriaA",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -221,7 +221,7 @@
     "price": 210,
     "status": true,
     "stock": 50,
-    "category": "Categoria B",
+    "category": "CategoriaB",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -235,7 +235,7 @@
     "price": 145,
     "status": true,
     "stock": 20,
-    "category": "Categoria C",
+    "category": "CategoriaC",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -249,7 +249,7 @@
     "price": 160,
     "status": true,
     "stock": 35,
-    "category": "Categoria A",
+    "category": "CategoriaA",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -263,7 +263,7 @@
     "price": 200,
     "status": true,
     "stock": 40,
-    "category": "Categoria B",
+    "category": "CategoriaB",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -277,7 +277,7 @@
     "price": 175,
     "status": true,
     "stock": 30,
-    "category": "Categoria C",
+    "category": "CategoriaC",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -291,7 +291,7 @@
     "price": 140,
     "status": true,
     "stock": 50,
-    "category": "Categoria A",
+    "category": "CategoriaA",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -305,7 +305,7 @@
     "price": 190,
     "status": true,
     "stock": 25,
-    "category": "Categoria B",
+    "category": "CategoriaB",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -319,7 +319,7 @@
     "price": 170,
     "status": true,
     "stock": 30,
-    "category": "Categoria C",
+    "category": "CategoriaC",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -333,7 +333,7 @@
     "price": 185,
     "status": true,
     "stock": 40,
-    "category": "Categoria A",
+    "category": "CategoriaA",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -347,7 +347,7 @@
     "price": 155,
     "status": true,
     "stock": 20,
-    "category": "Categoria B",
+    "category": "CategoriaB",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -361,7 +361,7 @@
     "price": 130,
     "status": true,
     "stock": 35,
-    "category": "Categoria C",
+    "category": "CategoriaC",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -375,7 +375,7 @@
     "price": 175,
     "status": true,
     "stock": 20,
-    "category": "Categoria A",
+    "category": "CategoriaA",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -389,7 +389,7 @@
     "price": 145,
     "status": true,
     "stock": 25,
-    "category": "Categoria B",
+    "category": "CategoriaB",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -403,7 +403,7 @@
     "price": 160,
     "status": true,
     "stock": 30,
-    "category": "Categoria C",
+    "category": "CategoriaC",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -417,7 +417,7 @@
     "price": 185,
     "status": true,
     "stock": 40,
-    "category": "Categoria A",
+    "category": "CategoriaA",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -431,7 +431,7 @@
     "price": 195,
     "status": true,
     "stock": 50,
-    "category": "Categoria B",
+    "category": "CategoriaB",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -445,7 +445,7 @@
     "price": 130,
     "status": true,
     "stock": 30,
-    "category": "Categoria C",
+    "category": "CategoriaC",
     "thumbnails": [
       "img1.png",
       "img2.png"
@@ -459,10 +459,28 @@
     "price": "140",
     "status": true,
     "stock": "25",
-    "category": "Categoria B",
+    "category": "CategoriaB",
     "thumbnails": [
       "img1.png",
       "img2.png"
     ]
+  },
+  {
+    "title": "dsad",
+    "code": "dad",
+    "price": "34",
+    "stock": "434",
+    "category": "none",
+    "thumbnails": [],
+    "id": "b5f1473fa9d1a6948fdb4e45"
+  },
+  {
+    "title": "asdasd",
+    "code": "234",
+    "price": "34",
+    "stock": "4343",
+    "category": "no",
+    "thumbnails": [],
+    "id": "3e78909dc42eed6dc5cc8c02"
   }
 ]

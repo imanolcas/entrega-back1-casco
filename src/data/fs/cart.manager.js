@@ -2,6 +2,7 @@ import fs from "fs";
 import crypto from "crypto";
 import productsManager from "./products.manager.js";
 
+
 class CartManager {
     constructor(path){
         this.path = path
@@ -23,7 +24,7 @@ class CartManager {
         try {
             const data = await fs.promises.readFile(this.path, "utf-8")
             const parseData  = JSON.parse(data)
-            
+                        
             if(cid){
                 const filteredData = parseData.find((el) => el.id == cid)
                 console.log(filteredData)
@@ -39,7 +40,7 @@ class CartManager {
 
     async create (data){
         try {
-            data.id = crypto.randomBytes(12).toString("hex")
+            data.id = crypto.randomBytes(24).toString("hex")
             const all = await this.read();
             all.push(data)
             const stringAll = JSON.stringify(all, null, 2)
@@ -51,11 +52,12 @@ class CartManager {
         }
     }
 
+  
+
     async addProduct(cid, pid){
         try {
             const all = await this.read()
             const cart = all.find((cart) => cart.id == cid)
-            console.log("este es el cart: ", cart.products)
 
             const product = await productsManager.read(pid)
 
@@ -63,11 +65,9 @@ class CartManager {
                 throw new Error(`Product with ID ${pid} not found`);
             }
 
-            console.log("Data de readAll:", all);
 
             const productInCart = cart.products.find(item => item.id === pid);
 
-            
 
             if (productInCart) {
                 productInCart.quantity += 1;
