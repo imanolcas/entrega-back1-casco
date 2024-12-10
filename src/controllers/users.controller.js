@@ -1,6 +1,56 @@
-import mongoose from 'mongoose';
-import usersManager from '../data/fs/user.manager.js';
-import usersMongoManager from '../data/mongo/managers/user.mongo.js';
+// import mongoose from 'mongoose';
+// import usersManager from '../data/fs/user.manager.js';
+// import usersMongoManager from '../data/mongo/managers/user.mongo.js';
+import controllers from './controller.manager.js';
+import { userService } from '../services/user.services.js';
+
+class UserController extends controllers{
+    constructor(){
+        super(userService)
+    }
+
+    register = async(req, res, next) => {
+        try {
+            const user = await this.service.register(req.body)
+            res.json(user)
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    login = async (req, res, next) => {
+        try {
+            const token = await this.service.login(req.body)
+            res
+                .cookie("token", token, {httpOnly: true})
+                .json({ message: "login", token})
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    privateData = (req, res, next) => {
+        try {
+            if(!req.user)
+                throw new Error("Unable to access user data");
+            res.json({
+                user: req.user
+            })
+            
+        } catch (error) {
+            next(error)
+        }
+    }
+}
+
+export const userController = new UserController()
+
+
+
+
+
+
+// Anterior
 
 export async function getAllUsers (req, res, next) {
     try {
@@ -93,8 +143,8 @@ export async function destroyUser(req, res, next) {
 
 export async function showUser(req, res, next) {
         try {
-            const { uid } = req.params
-            const objectId = new mongoose.Types.ObjectId(uid);
+            const { id } = req.params
+            const objectId = new mongoose.Types.ObjectId(id);
             const response = await usersMongoManager.read(objectId)
             if(response){
                 res.render("user", {user: response})

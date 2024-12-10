@@ -4,10 +4,13 @@ import router from "./src/routers/index.router.js"
 import errorHandler from "./src/middleware/errorHandler.mid.js"
 import pathHandler from "./src/middleware/pathHandler.mid.js"
 import morgan from "morgan"
-import {engine} from "express-handlebars"
 import __dirname from "./utils.js"
 import dbConnect from "./src/utils/db.util.js"
 import exphbs from 'express-handlebars';
+import cookieParser from "cookie-parser"
+import passport from "passport"
+import MongoStore from "connect-mongo"
+import session from "express-session"
 
 try {
     const server = express()
@@ -19,11 +22,35 @@ try {
         await dbConnect()
     }
 
+    const sessionStore = MongoStore.create({
+        mongoUrl: process.env.DB_LINK,
+        crypto: { secret: process.env.SECRET_KEY },
+        ttl: 180
+    })
+
+    
+    
     server.listen(port, ready)
+    
+    server.use(cookieParser())
+    
     
     server.use(morgan("dev"))
     server.use(express.urlencoded({ extended: true }));
     server.use(express.json());
+    server.use(
+        session({
+            store: sessionStore,
+            secret: process.env.SECRET_KEY,
+            resave: true,
+            saveUninitialized: true,
+            cookie: { maxAge: 180000 }
+        })
+    )
+    
+    server.use(passport.initialize());
+    server.use(passport.session());
+
     
     server.use(router)
     server.use(errorHandler);

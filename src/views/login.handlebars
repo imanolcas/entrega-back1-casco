@@ -2,42 +2,14 @@
   <div class="card-body ">
     <h3>Login</h3>
     <form class="d-flex flex-column m-4 gap-2" id="login-form" method="post" >
+      
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
-        <button type="submit" class="btn btn-primary">Enter</button>
+        <button type="submit" class="btn btn-primary" value="LOGIN">Enter</button>
     </form>
   </div>
 </div>
 
-{{!-- <script>
-    document.getElementById("login-form").addEventListener("submit", async function(e){
-    e.preventDefault
-    const email = document.getElementById("email").value
-    const password = document.getElementById("password").value
-    try{
-      const response = await fetch("login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email, password })
-      });
-      const result = await response.json();
-      if(!result){
-        window.localStorage.setItem("user", JSON.stringify(result.user));
-        window.location.href = "/";
-      }else{
-        return
-      }
-      
-
-    }catch(error){
-      console.error("Error during login:", error);
-      alert(JSON.stringify(result))
-      alert("An error occurred.");
-    }
-  }) 
-</script> --}}
         

@@ -61,7 +61,6 @@ class UsersManager {
 
     async create(data) {
         try {
-            console.log(data)
           data.id = crypto.randomBytes(12).toString("hex");
 
           const all = await this.readAll();
